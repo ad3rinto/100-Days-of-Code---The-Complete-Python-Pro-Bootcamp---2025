@@ -15,13 +15,13 @@ while word_length > 0:
     guess = input("Guess a letter: ").lower()
     word_length -= 1
 
-display = ""
+display = []
 
 # TODO-2: Change the for loop so that you keep the previous correct letters in display.
 
-for letter in chosen_word:
-    if letter == guess:
-        display += letter
+for i in range(len(chosen_word) -1):
+    if chosen_word[i] == guess:
+        display[i] = guess
     else:
         display += "_"
 
