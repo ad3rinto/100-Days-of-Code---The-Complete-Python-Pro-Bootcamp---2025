@@ -1,8 +1,6 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+
 
 
 # TODO-1: Create a function called 'decrypt()' that takes 'original_text' and 'shift_amount' as inputs.
@@ -20,7 +18,23 @@ def encrypt(original_text, shift_amount):
     print(f"Here is the encoded result: {cipher_text}")
 
 
-encrypt(original_text=text, shift_amount=shift)
+
+def decrypt(cipher_text, shift_amount):
+    original_text = ""
+    for letter in cipher_text:
+        shifted_position = alphabet.index(letter) - shift_amount
+        shifted_position %= len(alphabet)
+        original_text += alphabet[shifted_position]
+    print(f"Here is the decoded result: {original_text}")
+
+def caesar():
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    if direction == "encode":
+        encrypt(original_text=text, shift_amount=shift)
+    elif direction == "decode":
+        decrypt(cipher_text=text, shift_amount=shift)
 
 
-
+caesar()
