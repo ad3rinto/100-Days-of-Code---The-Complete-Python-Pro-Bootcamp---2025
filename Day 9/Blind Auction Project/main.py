@@ -2,12 +2,12 @@
 from art import logo
 print(logo)
 
-def find_highest_bidder(bid_data):
-    for key in bid_data:
-        highest_bid = 0
-        if bid_data[key] > highest_bid:
-            highest_bid = bid_data[key]
-    print(f"The highest bid is £{highest_bid}, by {key}")
+# def find_highest_bidder(bid_data):
+#     for key in bid_data:
+#         highest_bid = 0
+#         if bid_data[key] > highest_bid:
+#             highest_bid = bid_data[key]
+#     print(f"The highest bid is £{highest_bid}, by {key}")
 
 
 bid_on = True
@@ -20,7 +20,7 @@ while bid_on:
     bid_dic[name] = bid
     if bid_to_proceed == "N":
         bid_on = False
-        find_highest_bidder(bid_dic)
+        # find_highest_bidder(bid_dic)
 
 
 
@@ -31,3 +31,6 @@ while bid_on:
 
 
 # TODO-4: Compare bids in dictionary
+
+print(max(bid_dic, key=bid_dic.get))
+print(bid_dic[max(bid_dic, key=bid_dic.get)])
