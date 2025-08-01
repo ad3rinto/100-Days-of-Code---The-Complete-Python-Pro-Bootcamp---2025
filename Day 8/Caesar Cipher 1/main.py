@@ -8,7 +8,7 @@ shift = int(input("Type the shift number:\n"))
 # TODO-1: Create a function called 'encrypt()' that takes 'original_text' and 'shift_amount' as 2 inputs.
 def encrypt(original_text, shift_amount):
     new_text = ""
-    length = len(text)
+    length = len(alphabet)
     for char in original_text:
 
         if char in alphabet:
@@ -19,6 +19,8 @@ def encrypt(original_text, shift_amount):
             elif index > length + shift_amount:
                 new_char = alphabet[index - shift_amount]
                 new_text += new_char
+        else:
+            new_text += "?"
 
     print(f"{original_text}, {new_text}")
 
