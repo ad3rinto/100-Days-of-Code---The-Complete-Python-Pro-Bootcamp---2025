@@ -10,3 +10,6 @@ length = len(formatted_name)
 
 
 
+def my_function(num):
+    """Multiplies a number by itself."""
+    return num * num
