@@ -1,0 +1,8 @@
+import art
+import random
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+player_card = random.sample(cards, 2)
+computer_card = random.sample(cards, 2)
+print(player_card)
+print(computer_card)
