@@ -19,14 +19,14 @@ def check_score(score1, score2):
     computer_score = 0
     for _ in computer_card:
         computer_score += _
-    if score1 > score2:
-        print("player wins")
+    if computer_score >= player_score:
+        print("Computer wins - 1")
     else:
-        print("computer wins")
+        print("Player wins")
 
 
 if 11 in computer_card:
-    print("computer wins")
+    print("computer wins -2")
 elif 11 in player_card and 11 not in computer_card:
     print("player wins")
 else:
