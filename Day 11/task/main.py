@@ -4,11 +4,11 @@ import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_card = random.sample(cards, 2)
 computer_card = random.sample(cards, 2)
+
+print(art.logo)
+
 print(player_card)
 print(computer_card)
-
-
-
 
 def check_score(score1, score2):
     """Takes player score and computer score and check which is highest"""
@@ -24,6 +24,7 @@ def check_score(score1, score2):
         print("Computer wins - 1")
     else:
         print("Player wins")
+    print("\n" *2)
 
 
 if 11 in computer_card and 10 in computer_card:
