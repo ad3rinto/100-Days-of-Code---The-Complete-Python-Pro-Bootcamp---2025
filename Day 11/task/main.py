@@ -7,25 +7,32 @@ computer_card = random.sample(cards, 2)
 
 print(art.logo)
 
-print(player_card)
-print(computer_card)
+# print(player_card)
+# print(computer_card)
 
-def check_score(score1, score2):
+def first_draw(playercard,computercard):
     """Takes player score and computer score and check which is highest"""
     player_score = 0
-    for _ in player_card:
+    for _ in playercard:
+        print(_)
         player_score += _
 
     computer_score = 0
-    for _ in computer_card:
+    for _ in computercard:
+        print(_)
         computer_score += _
 
-    if computer_score >= player_score:
+def check_win(score1, score2):
+    if score1 < score2:
         print("Computer wins - 1")
+    elif score1 == score2:
+        print("This one na draw ooo")
     else:
         print("Player wins")
     print("\n" *2)
 
+
+first_draw(player_card,computer_card)
 
 if 11 in computer_card and 10 in computer_card:
     print("Blackjacks, computer wins")
@@ -34,4 +41,4 @@ elif 11 in player_card and 10 in player_card:
 elif 11 in player_card and 11 not in computer_card:
     print("player wins")
 else:
-    check_score(player_card, player_card)
+    check_win(player_card, computer_card)
