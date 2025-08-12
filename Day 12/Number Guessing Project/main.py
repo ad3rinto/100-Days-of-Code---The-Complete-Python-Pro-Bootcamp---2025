@@ -9,15 +9,26 @@ is_game_over = False
 guessed_number = random.randint(1, 100)
 number_of_tries = 10
 
-if difficulty == "easy":
-    number_of_tries = 3
-elif difficulty == "hard":
-    number_of_tries = 2
-else:
-    print("Invalid difficulty, please type again.")
+def set_difficulty():
+    if difficulty == "easy":
+        return 3
+    elif difficulty == "hard":
+        return 2
+    else:
+        return "Invalid difficulty"
+
+def check_choice(gue, g_number, diff):
+    if gue == g_number:
+        print("You guessed correctly!")
+    elif gue < g_number:
+        print("You guessed too low!")
+        diff -= 1
+    else:
+        print("You guessed too high!")
+        diff -= 1
 
 
-def game_play():
+def game():
     global is_game_over
     global number_of_tries
     while not is_game_over and number_of_tries > 0:
@@ -40,7 +51,7 @@ def game_play():
 
 
 
-game_play()
+game()
 
 
 
