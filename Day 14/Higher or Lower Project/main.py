@@ -24,7 +24,7 @@ def check(data_list):
         user_score += 1
     else:
         game_on = False
-        print(f"You scored {user_score} , game over")
+        print(f"Sorry, that's wrong. Final score:{user_score} , game over")
 
 
 
