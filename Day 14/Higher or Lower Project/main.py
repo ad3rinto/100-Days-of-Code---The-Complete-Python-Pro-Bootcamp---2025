@@ -7,8 +7,10 @@ print(logo)
 user_score = 0
 
 def check(data_list):
+    """ Function to compare answer provided by user, with the computer generated question"""
     global user_score
     global game_on
+    # generate chose random choices from the list o
     item_in_focus = random.choice(data_list)
     compared = random.choice(data_list)
     a_score = item_in_focus['follower_count']
@@ -17,6 +19,7 @@ def check(data_list):
     print(vs)
     print(f"B: {compared['name']}, a {compared['description']}, from {compared['country']}\n")
     answer = input("Who has more followers? Type A or B:\n").upper()
+    # Compare the follower count of option A to option B
     if a_score > b_score and answer == 'A':
         user_score += 1
     else:
