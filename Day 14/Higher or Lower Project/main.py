@@ -2,19 +2,28 @@ import random
 from art import logo, vs
 from game_data import data
 
-game_len = 3
+game_on = True
 print(logo)
-User_score = 0
+user_score = 0
 
 def check(data_list):
+    global user_score
+    global game_on
     item_in_focus = random.choice(data_list)
     compared = random.choice(data_list)
+    a_score = item_in_focus['follower_count']
+    b_score = compared['follower_count']
     print(f"compare A: {item_in_focus['name']}, a {item_in_focus['description']}, from {item_in_focus['country']}")
     print(vs)
     print(f"B: {compared['name']}, a {compared['description']}, from {compared['country']}\n")
     answer = input("Who has more followers? Type A or B:\n").upper()
+    if a_score > b_score and answer == 'A':
+        user_score += 1
+    else:
+        game_on = False
+        print(f"You scored {user_score} , game over")
 
 
-while game_len > 0:
+
+while game_on:
     check(data)
-    game_len -= 1
