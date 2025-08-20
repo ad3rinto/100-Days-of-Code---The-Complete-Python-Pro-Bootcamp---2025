@@ -22,6 +22,7 @@ def check(data_list):
     # Compare the follower count of option A to option B
     if a_score > b_score and answer == 'A':
         user_score += 1
+
         print(f"You are right! Your current score is  {user_score}.")
         print("\n"*5)
     else:
